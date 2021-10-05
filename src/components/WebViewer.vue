@@ -4,7 +4,7 @@
 
 <script>
 /* eslint-disable */
-import WebViewer from "@pdftron/pdfjs-express";
+import WebViewer from "@pdftron/pdfjs-express-viewer";
 
 export default {
   name: "WebViewer",
@@ -15,7 +15,8 @@ export default {
     WebViewer(
       {
         path: this.path,
-        initialDoc: '../../public/files/demo.pdf',
+        initialDoc: `${process.env.BASE_URL}files/demo.pdf`,
+        licenseKey: 'VMeLR5MsW5lX3X9YfqQF',
       },
       this.$refs.viewer
     ).then((instance) => {
